@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row justify-content-center mt-4">
+    <div class="col-4">
+      <h1>Add a new movie</h1>
+      <%= simple_form_for [@list, @bookmark] do |f| %>
+        <%= f.association :movie, as: :select %>
+        <%= f.input :comment %>
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>

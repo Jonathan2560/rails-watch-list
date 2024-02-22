@@ -1,0 +1,32 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  margin-bottom: 2em;
+}
+
+.banner h1 {
+  margin: 0.5em auto;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.banner p {
+  font-size: 28px;
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.btn-top-right {
+  position: absolute;
+  top: 4em;
+  right: 1em;
+}
+
+a {
+  text-decoration: none;
+}

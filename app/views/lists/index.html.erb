@@ -18,7 +18,7 @@
             if list.photo.attached?
               cl_image_path list.photo.key
             else
-              cl_image_path("placeholder.jpg")
+              cl_image_path("placeholder.jpg", crop: :fill)
             end
           %>)">
             <%= list.name %>

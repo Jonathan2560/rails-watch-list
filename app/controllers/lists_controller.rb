@@ -29,7 +29,7 @@ class ListsController < ApplicationController
   private
 
   def strong_params
-    params.require(:list).permit(:name, :img_url)
+    params.require(:list).permit(:name, :img_url, photos: [])
   end
 
   def set_list

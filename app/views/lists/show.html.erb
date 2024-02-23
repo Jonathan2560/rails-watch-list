@@ -13,10 +13,7 @@
 </div>
 
 <div class="container">
-  <div class="mb-4 d-flex justify-content-end">
-    <%= link_to "Add a movie", new_list_bookmark_path(@list), class:"btn btn-success rounded-4" %>
-  </div>
-  <div class="row mb-4">
+  <div class="row my-4">
     <div class="col-8">
       <div class="row">
          <% @bookmarks.each do |bookmark| %>
@@ -38,11 +35,30 @@
       </div>
     </div>
     <div class="col-4">
-      <div class="card rounded-4 shadow-sm p-4">
+      <div class="card rounded-4 shadow-sm p-4 sticky">
         <h4>Add a new movie</h4>
         <%= simple_form_for [@list, @bookmark] do |f| %>
           <%= f.association :movie, as: :select %>
           <%= f.input :comment %>
+          <%= f.button :submit, class: 'btn btn-success rounded-4' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-4">
+    <div class="col-8">
+      <h3 class="mb-3">Reviews</h3>
+      <% @list.reviews.each do |review| %>
+        <p class="lead mb-1"><%= review.content %> <%= review.rating %>/5</p>
+        <hr class="my-3">
+      <% end %>
+    </div>
+    <div class="col-4">
+      <div class="card rounded-4 shadow-sm p-4">
+        <h4>Add a review</h4>
+        <%= simple_form_for [@list, @review] do |f| %>
+          <%= f.input :content %>
+          <%= f.input :rating %>
           <%= f.button :submit, class: 'btn btn-success rounded-4' %>
         <% end %>
       </div>
